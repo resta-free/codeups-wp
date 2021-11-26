@@ -1,0 +1,31 @@
+.c-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-cards__item {
+  @include mq('tab') {
+    width: calc(33.3% - #{rem(25)} * 2 / 3);
+    margin-right: rem(25);
+  }
+}
+
+.c-cards__item:not(:first-child) {
+  margin-top: rem(25);
+
+  @include mq('tab') {
+    margin-top: 0;
+  }
+}
+
+.c-cards__item:nth-child(n + 4) {
+  @include mq('tab') {
+    margin-top: rem(25);
+  }
+}
+
+.c-cards__item:nth-child(3n) {
+  @include mq('tab') {
+    margin-right: 0;
+  }
+}

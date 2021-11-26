@@ -15,7 +15,7 @@ const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
 
 
-const themeName = "WordPressTheme"; // WordPress theme name
+const themeName = "CodeupsWp"; // WordPress theme name
 const srcPath = {
 	css: './sass/**/*.scss',
 }

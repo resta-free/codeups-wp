@@ -1,0 +1,82 @@
+.p-pc-nav {
+  @include mq('tab') {
+    margin-left: auto;
+    height: inherit;
+  }
+}
+
+.p-pc-nav__items {
+  display: none;
+  
+  @include mq('tab') {
+    height: inherit;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+.p-pc-nav__item {
+  height: inherit;
+  letter-spacing: rem(2);
+  font-size: rem(16);
+}
+
+.p-pc-nav__item:not(:first-child) {
+  margin-left: rem(30);
+}
+
+.p-pc-nav__item a {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  padding: 0 rem(16);
+}
+
+.p-pc-nav__item a::after {
+  content:"";
+  position: absolute;
+  top: calc(100% + -10px);
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  transition: transform .3s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  background-color: #FFEA2E;
+}
+
+.p-pc-nav__item a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+  
+.p-pc-nav__item--white {
+  height: inherit;
+  margin-left: rem(16);
+}
+
+.p-pc-nav__item--white a {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  padding: 0 rem(32);
+  transition: .5s ease;
+}
+
+.p-pc-nav__item--white a::after {
+  background-color: transparent;
+}
+
+.p-pc-nav__item--white a:hover::after {
+  background-color: transparent;
+}
+
+.p-pc-nav__item--white a:hover {
+  background-color: #333;
+  color: #fff;
+}

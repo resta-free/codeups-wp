@@ -14,6 +14,47 @@ jQuery(function() {
 		}
 	});
 
+	//ナビバートグル
+	$('.js-hamburger').on('click', function () {
+		if ($('.js-hamburger').hasClass('is-open')) {
+			$('.js-drawer-menu').removeClass('is-open');
+			$(this).removeClass('is-open');
+		} else {
+			$('.js-drawer-menu').addClass('is-open');
+			$(this).addClass('is-open');
+		}
+	});
+
+	// MVスライダー
+	var mv__slider = new Swiper('.p-mv__slider', {
+		effect: 'fade',
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+		},
+		speed: 2000,
+	});
+
+	// WORKSスライダー
+	var works__slider = new Swiper('.p-works__slider', {
+		// Optional parameters
+		slidesPerView: 1,
+		loop: true,
+		autoplay: {
+			delay: 2000,
+		},
+		// If we need pagination
+		pagination: {
+			el: '.swiper-pagination',
+			type:"bullets", 
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
 	/* ドロワー */
 	jQuery(".js-drawer").on("click", function(e) {
 		e.preventDefault();
@@ -42,6 +83,18 @@ jQuery(function() {
 			speed
 		);
 		return false;
+	});
+
+	// スクロール検知
+	jQuery(window).on("scroll", function() {
+		// トップから100px以上スクロールしたら
+		if (100 < jQuery(this).scrollTop()) {
+			// is-showクラスをつける
+		jQuery('.c-totop').addClass( 'is-show' );
+		} else {
+			// 100pxを下回ったらis-showクラスを削除
+		jQuery('.c-totop').removeClass( 'is-show' );
+		}
 	});
 
 	/* 電話リンク */

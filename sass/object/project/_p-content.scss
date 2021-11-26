@@ -1,0 +1,129 @@
+.p-content {
+}
+
+.p-content__inner {
+  position: relative;
+}
+
+.p-content__inner::after {
+  content:"";
+  position: absolute;
+  width: rem(1);
+  height: calc( 776 / 375 * 150vw);
+  left: 24.5%;
+  top: rem(-445);
+  background: #F9F871;
+  transform: rotate(-29deg);
+  z-index: -1;
+  
+  @include mq('tab') {
+    height: calc( 1714 / 1280 * 150vw);
+    left: 28.9%;
+    top: rem(-1015);
+    transform: rotate(-45deg);
+  }
+}
+
+.p-content__title {
+  max-width: rem(800);
+  width: 100%;
+  margin: 0 auto;
+  letter-spacing: rem(2);
+  position: relative;
+
+  @include mq('tab') {
+    max-width: rem(1280);
+  }
+}
+
+.p-content__items {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin-top: rem(47);
+
+  @include mq('tab') {
+    flex-wrap: nowrap;
+    margin-top: rem(42);
+  }
+}
+
+.p-content__itembox {
+  width: 50%;
+
+  @include mq('tab') {
+    width: 25%;
+  }
+}
+
+.p-content__item1,
+.p-content__item2,
+.p-content__item3,
+.p-content__item4 {
+  padding-top: 89.36%;
+  height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @include mq('tab') {
+    padding-top: 100%;
+    height: 0;
+    width: 100%;
+  }
+}
+
+.p-content__item1 {
+  background: transparent url(../img/common/content1.png) no-repeat center center / cover;
+}
+
+.p-content__item2 {
+  background: transparent url(../img/common/content2.png) no-repeat center center / cover;
+}
+
+.p-content__item3 {
+  background: transparent url(../img/common/content3.png) no-repeat center center / cover;
+}
+
+.p-content__item4 {
+  background: transparent url(../img/common/content4.png) no-repeat center center / cover;
+}
+
+.p-content__link {
+  position: absolute;
+  content:"";
+  top: 0;
+  left: 0;
+  height: 100%;
+  font-size: rem(20);
+  letter-spacing: rem(2);
+  font-weight: 400;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mq('tab') {
+    font-size: rem(25);
+  }
+}
+
+.p-content__link::after {
+  position: absolute;
+  content:"";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  opacity: 0;
+  transition: all .5s ease;
+}
+  
+.p-content__link:hover::after {
+  opacity: 0.6;
+}

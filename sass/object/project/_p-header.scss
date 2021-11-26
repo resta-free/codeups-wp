@@ -1,0 +1,27 @@
+.p-header {
+  height: rem(50);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: ease .5s;
+}
+
+.p-header__inner {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 rem(22);
+
+  @include mq('tab') {
+    padding-left: rem(32);
+    padding-right: 0;
+  }
+}
+
+.p-header__nav {
+}
+
+.p-header__drawer {
+  @include mq('tab') {
+    display: none;
+  }
+}
+

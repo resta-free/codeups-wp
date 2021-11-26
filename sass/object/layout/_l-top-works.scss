@@ -1,0 +1,7 @@
+.l-top-works {
+  margin: rem(121) auto 0;
+
+  @include mq('tab') {
+    margin: rem(213) auto 0;
+  }
+}

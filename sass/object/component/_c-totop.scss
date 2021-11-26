@@ -1,0 +1,46 @@
+.c-totop {
+  width: rem(45);
+  height: rem(45);
+  position: fixed;
+  bottom: rem(41);
+  right: rem(21);
+  opacity: 0;
+  background-color: #fff;
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mq('tab') {
+    bottom: rem(32);
+    right: rem(31);
+  }
+}
+
+.c-totop a {
+  display: block;
+  width: rem(19);
+  height: rem(19);
+  content:"";
+  position: absolute;
+  top: rem(19);
+  left: rem(13);
+  border-left: 2px solid #333;
+  border-top: 2px solid #333;
+  transform: rotate(45deg);
+}
+
+.c-totop.is-show {
+  opacity: 1;
+}
+
+
+.c-totop:hover {
+  background-color: #333333;
+  transition: .5s ease;
+}
+
+.c-totop:hover a {
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+}

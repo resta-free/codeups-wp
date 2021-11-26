@@ -1,0 +1,37 @@
+.p-sp-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  z-index: 8888;
+  transform: translateX(100%);
+  transition: ease .3s;
+
+  @include mq('tab') {
+    display: none;
+  }
+}
+
+.p-sp-nav.is-open {
+  transform: translateX(0);
+}
+
+.p-sp-nav__items {
+  height: 100vh;
+  padding-top: rem(250);
+  padding-bottom: rem(100);
+  overflow: scroll;
+}
+
+.p-sp-nav__items a {
+  display: inline-block;
+  width: 100%;
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+  text-align: center;
+  color: #fff;
+  font-size: rem(16);
+}

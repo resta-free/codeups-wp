@@ -1,0 +1,14 @@
+.c-btn {
+  display: inline-block;
+  max-width: rem(335);
+  width: 100%;
+  padding: rem(9) 0;
+  letter-spacing: rem(2);
+  border: 1px solid #fff;
+
+  @include mq('tab') {
+    max-width: rem(360);
+    line-height: rem(54);
+    padding: rem(2) 0;
+  }
+}

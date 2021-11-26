@@ -1,0 +1,60 @@
+.swiper {
+  margin: 0;
+}
+
+.swiper-wrapper {
+  height: inherit;
+}
+
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.swiper-slide {
+  height: inherit;
+}
+
+.swiper-slide-active .slide-img,
+.swiper-slide-duplicate-active .slide-img,
+.swiper-slide-prev .slide-img {
+  animation: zoomUp 10s linear 0s 1 normal both;  
+}
+.slide-img {
+  height: inherit;
+  width: inherit;
+}
+
+// worksスライダー
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  position: static;
+  height: rem(50);
+  margin-top: rem(-55);
+  margin-left: rem(-2);
+
+  @include mq('tab') {
+    position: absolute;
+    bottom: rem(-5);
+    width: rem(60);
+    left: 21%;
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 rem(5.5);
+}
+
+.swiper-pagination-bullet {
+  background: #C4C4C4;
+  width: rem(8);
+  height: rem(8);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #F9F871;
+} 
