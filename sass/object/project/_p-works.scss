@@ -57,26 +57,19 @@
 }
 
 .p-works__title {
-  letter-spacing: rem(2);
+  width: 100%;
 
   @include mq('tab') {
-    line-height: rem(15.8);
-    letter-spacing: rem(0.5);
     max-width: rem(1280);
     margin: 0 auto;
-    width: 100%;
   }
 }
 
 .p-works__title span {
-  content:"";
   position: absolute;
   top: rem(-50);
   left: 50%;
   transform: translateX(-50%);
-  width: rem(205);
-  height: rem(72);
-  letter-spacing: rem(2);
 
   @include mq('tab') {
     left: 74%;

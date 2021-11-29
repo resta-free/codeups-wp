@@ -23,7 +23,7 @@
 }
 
 .p-pc-nav__item:not(:first-child) {
-  margin-left: rem(30);
+  // margin-left: rem(30);
 }
 
 .p-pc-nav__item a {
@@ -32,7 +32,7 @@
   align-items: center;
   position: relative;
   color: #fff;
-  padding: 0 rem(16);
+  padding: 0 rem(14.7);
 }
 
 .p-pc-nav__item a::after {

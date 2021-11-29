@@ -7,9 +7,12 @@
   font-weight: 400;
   font-size: rem(20);
   position: relative;
+  letter-spacing: rem(2);
 
   @include mq('tab') {
     font-size: rem(30);
+    // line-height: rem(15.8);
+    letter-spacing: rem(0.5);
   }
 }
 
@@ -20,19 +23,12 @@
   opacity: .27;
   font-size: rem(50);
   font-family: $font-family-sub;
-  content:"";
   position: absolute;
-  top: rem(-50);
-  left: 50%;
-  width: 100%;
   transform: translateX(-50%);
-  height: rem(72);
   letter-spacing: rem(2);
 
   @include mq('tab') {
     font-size: rem(110);
-    left: 15%;
-    top: rem(-43);
   }
   
 }
