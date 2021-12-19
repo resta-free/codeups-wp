@@ -1,7 +1,6 @@
 .c-card {
   max-width: rem(600);
   position: relative;
-  margin: 0 auto;
   width: 100%;
 
   @include mq('tab') {
@@ -55,7 +54,7 @@
   }
 }
 
-.blog__flex {
+.c-card__flex {
   display: flex;
   justify-content: space-between;
 }

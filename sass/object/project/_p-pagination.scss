@@ -1,0 +1,67 @@
+.p-pagination {
+
+  @include mq('tab') {
+    font-size: 0;
+  }
+}
+
+.p-pagination__flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.p-pagination__prev,
+.p-pagination__next,
+.p-pagination__number {
+  text-transform: uppercase;
+  letter-spacing: rem(2);
+  border: 1px solid #fff;
+  font-size: rem(16);
+  height: rem(24);
+  display: flex;
+  align-items: center;
+  transition: ease .3s;
+}
+
+.p-pagination__prev:hover,
+.p-pagination__next:hover,
+.p-pagination__number:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.p-pagination__prev a {
+  padding: 0 rem(10) 0 rem(12);
+}
+
+.p-pagination__numbers {
+  display: flex;
+}
+
+.p-pagination__next {
+  margin-left: rem(21);
+}
+
+.p-pagination__next a {
+  padding: 0 rem(10) 0 rem(12);
+}
+
+.p-pagination__number a {
+  padding: 0 rem(5) 0 rem(7);
+}
+
+.p-pagination__number:not(:first-child) {
+  margin-left: rem(15);
+}
+
+.p-pagination__number:first-child {
+  margin-left: rem(24);
+}
+
+.p-pagination__number.is-active {
+  background-color: #fff;
+  color: #333;
+}
+
+

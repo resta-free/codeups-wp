@@ -1,0 +1,21 @@
+.c-contact-button {
+  font-size: 0;
+}
+
+.c-contact-button__button {
+  font-size: rem(20);
+  line-height: rem(28.96);
+  letter-spacing: rem(2);
+  color: #333;
+  background-color: #fff;
+  width: 100%;
+  padding: rem(11) 0 rem(10);
+
+  @include mq('tab') {
+    width: rem(360);
+    font-size: rem(16);
+    line-height: rem(54);
+    margin-left: rem(271);
+    padding: rem(3) 0;
+  }
+}

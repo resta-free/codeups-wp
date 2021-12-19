@@ -1,5 +1,4 @@
 .swiper {
-  margin: 0;
 }
 
 .swiper-wrapper {
@@ -24,6 +23,7 @@
 .swiper-slide-prev .slide-img {
   animation: zoomUp 10s linear 0s 1 normal both;  
 }
+
 .slide-img {
   height: inherit;
   width: inherit;
@@ -38,9 +38,9 @@
 
   @include mq('tab') {
     position: absolute;
-    bottom: rem(-5);
+    bottom: rem(-56);
     width: rem(60);
-    left: 21%;
+    left: 20.9%;
   }
 }
 
@@ -58,3 +58,8 @@
 .swiper-pagination-bullet-active {
   background: #F9F871;
 } 
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: none;
+}

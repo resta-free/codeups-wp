@@ -22,19 +22,16 @@
 }
 
 .p-blog__title span {
-  content:"";
-  position: absolute;
-  top: rem(-52);
-  left: 50%;
-  transform: translateX(-50%);
-  width: rem(205);
-  height: rem(72);
-  letter-spacing: rem(2);
-
   @include mq('tab') {
-    left: 87.2%;
+    left: 78%;
     top: rem(-60);
+    transform: translateX(0);
   }
+}
+
+.p-blog__flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 .p-blog__cards {
@@ -45,7 +42,7 @@
   margin-right: auto;
 
   @include mq('tab') {
-    margin-top: rem(32);
+    margin-top: rem(34);
     max-width: $l-inner;
   }
 }
@@ -86,46 +83,40 @@
   }
 }
 
-.p-blog__button a {
-  background:#333;
+.p-blog__button-swipe {
+  background-color: #333;
+  overflow: hidden;
+  position: relative;
+  background-color:#333;
   font-size: rem(20);
+  z-index: 1;
+  transition: .3s;
 
   @include mq('tab') {
     font-size: rem(16);
   }
 }
 
-.p-blog__button-swipe {
-  @include mq('tab') {
-    overflow: hidden;
-    position: relative;
-  }
-}
-
-.p-blog__button-swipe:before {
-  @include mq('tab') {
-    content:"";
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background: #fff;
-    transition: all .3s ease 0s;
-    display: inline-block;
-  }
+.p-blog__button-swipe::before {
+  content:"";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
+  background-color: #fff;
+  display: block;
 }
 
 .p-blog__button-swipe:hover {
-  @include mq('tab') {
-    color: #333;
-    border: 1px solid #fff;
-  }
+  color: #333;
 }
 
-.p-blog__button-swipe:hover:before {
-  @include mq('tab') {
-    left: 0;
-  }
+.p-blog__button-swipe:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
 }

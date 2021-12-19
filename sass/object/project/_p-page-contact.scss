@@ -1,0 +1,85 @@
+.p-page-contact {}
+
+.p-page-contact__inner {}
+
+.p-page-contact__visual {
+  background-image: url(../img/contact/page-contact_img-sp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: rem(425);
+
+  @include mq('tab') {
+    height: rem(370);
+    background-image: url(../img/contact/page-contact_img-pc.jpg);
+  }
+}
+
+.p-page-contact__title {
+  white-space: nowrap;
+
+  @include mq('tab') {
+    margin-top: rem(-3);
+  }
+}
+
+.p-page-contact__contents {
+  margin-top: rem(84);
+  max-width: rem(600);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: rem(75);
+
+  @include mq('tab') {
+    max-width: rem(1100);
+    margin-left: rem(99);
+    margin-top: rem(114);
+    margin-bottom: rem(150);
+  }
+}
+
+.p-page-contact__content {
+  @include mq('tab') {
+    display: flex;
+  }
+}
+
+.p-page-contact__content:not(:first-child) {
+  margin-top: rem(32);
+
+  @include mq('tab') {
+    margin-top: rem(45);
+  }
+}
+
+.p-page-contact__content:nth-child(6) {
+  margin-top: rem(48);
+
+  @include mq('tab') {
+    margin-top: rem(56);
+  }
+}
+
+.p-page-contact__head {
+  @include mq('tab') {
+    width: rem(156);
+    text-align: right;
+    margin-top: rem(8);
+  }
+}
+
+.p-page-contact__heading {
+  font-size: rem(14);
+  line-height: rem(24.05);
+  letter-spacing: rem(0.7);
+}
+
+.p-page-contact__item {
+  margin-top: rem(17);
+  font-size: 0;
+
+  @include mq('tab') {
+    margin-top: 0;
+    margin-left: rem(24);
+  }
+}

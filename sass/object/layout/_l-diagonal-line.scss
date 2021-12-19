@@ -1,0 +1,46 @@
+.l-diagonal-line {
+}
+
+.l-diagonal-line__downward,
+.l-diagonal-line__upward {
+  position: relative;
+  overflow: hidden;
+}
+
+.l-diagonal-line__downward::after {
+  position: absolute;
+  content:"";
+  top: rem(70);
+  left: 50%;
+  width: rem(1);
+  height: calc( 776 / 375 * 100vw);
+  background: #F9F871;
+  transform: rotate(-29deg);
+  z-index: -1;
+
+  @include mq('tab') {
+    top: rem(-170);
+    left: 47%;
+    height: calc( 1714 / 1280 * 100vw);
+    transform: rotate(-45deg);
+  }
+}
+
+.l-diagonal-line__upward::after {
+  position: absolute;
+  content:"";
+  top: rem(-550);
+  left: 50%;
+  width: rem(1);
+  height: calc( 1448 / 375 * 100vw);
+  background: #F9F871;
+  transform: rotate(15deg);
+  z-index: -1;
+
+  @include mq('tab') {
+    top: rem(-260);
+    left: 48%;
+    height: calc( 1712 / 1280 * 100vw);
+    transform: rotate(45deg);
+  }
+}

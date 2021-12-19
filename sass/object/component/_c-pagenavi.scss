@@ -1,0 +1,74 @@
+.c-pagenavi {
+  text-align: center;
+}
+
+.c-pagenavi .pages{
+  display: inline-block;
+  letter-spacing: rem(2);
+  padding: 0 rem(18);
+  color: #fff;
+  background-color: #111;
+  border: 1px solid #fff;
+}
+
+.c-pagenavi .previouspostslink {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: rem(2);
+  line-height: rem(23.17);
+  font-size: rem(16);
+  padding: 0 rem(13);
+  color: #fff;
+  background-color: #111;
+  border: 1px solid #fff;
+  margin-right: rem(14);
+  transition: ease .3s;
+}
+
+.c-pagenavi .nextpostslink {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: rem(2);
+  line-height: rem(23.17);
+  font-size: rem(16);
+  padding: 0 rem(13);
+  color: #fff;
+  background-color: #111;
+  border: 1px solid #fff;
+  margin-left: rem(16);
+  transition: ease .3s;
+}
+
+.c-pagenavi .page {
+  display: inline-block;
+  color: #fff;
+  background-color: #111;
+  border: 1px solid #fff;
+  letter-spacing: rem(0.5);
+  line-height: rem(15.8);
+  font-size: rem(16);
+  padding: rem(4) rem(7) rem(4) rem(8);
+  margin: 0 rem(8);
+  transition: ease .3s;
+}
+
+.c-pagenavi .current{
+  display: inline-block;
+	color: #111;
+	background-color: #fff;
+	border-color: #fff;
+  letter-spacing: rem(0.5);
+  line-height: rem(15.8);
+  font-size: rem(16);
+  padding: rem(5) rem(7) rem(5) rem(8);
+  margin: 0 rem(8);
+  transition: ease .3s;
+}
+
+.c-pagenavi .previouspostslink:hover,
+.c-pagenavi .nextpostslink:hover,
+.c-pagenavi .page:hover{
+	color: #333;
+	background-color: #fff;
+	border-color: #fff;
+}

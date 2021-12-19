@@ -2,26 +2,6 @@
 }
 
 .p-content__inner {
-  position: relative;
-}
-
-.p-content__inner::after {
-  content:"";
-  position: absolute;
-  width: rem(1);
-  height: calc( 776 / 375 * 150vw);
-  left: 24.5%;
-  top: rem(-445);
-  background: #F9F871;
-  transform: rotate(-29deg);
-  z-index: -1;
-  
-  @include mq('tab') {
-    height: calc( 1714 / 1280 * 150vw);
-    left: 28.9%;
-    top: rem(-1015);
-    transform: rotate(-45deg);
-  }
 }
 
 .p-content__title {
@@ -33,6 +13,14 @@
 
   @include mq('tab') {
     max-width: rem(1280);
+  }
+}
+
+.p-content__title span {
+  @include mq('tab') {
+    top: rem(-44);
+    left: 7%;
+    transform: translateX(0);
   }
 }
 

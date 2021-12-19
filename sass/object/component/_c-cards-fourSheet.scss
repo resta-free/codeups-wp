@@ -1,0 +1,31 @@
+.c-cards-fourSheet {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-cards-fourSheet__item {
+  @include mq('tab') {
+    width: calc(25% - #{rem(32)} * 3 / 4);
+    margin-right: rem(32);
+  }
+}
+
+.c-cards-fourSheet__item:not(:first-child) {
+  margin-top: rem(25);
+
+  @include mq('tab') {
+    margin-top: 0;
+  }
+}
+
+.c-cards-fourSheet__item:nth-child(n + 5) {
+  @include mq('tab') {
+    margin-top: rem(32);
+  }
+}
+
+.c-cards-fourSheet__item:nth-child(4n) {
+  @include mq('tab') {
+    margin-right: 0;
+  }
+}

@@ -11,24 +11,24 @@
 
   @include mq('tab') {
     font-size: rem(30);
-    // line-height: rem(15.8);
     letter-spacing: rem(0.5);
   }
 }
 
 .c-section-header__subtitle {
-  display: inline-block;
+  display: block;
   text-align: center;
   color: #F9F871;
   opacity: .27;
   font-size: rem(50);
   font-family: $font-family-sub;
   position: absolute;
+  top: rem(-50);
+  left: 50%;
   transform: translateX(-50%);
   letter-spacing: rem(2);
 
   @include mq('tab') {
     font-size: rem(110);
   }
-  
 }

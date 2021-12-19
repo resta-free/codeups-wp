@@ -1,7 +1,12 @@
 .p-header {
   height: rem(50);
   background-color: rgba(0, 0, 0, 0.5);
-  transition: ease .5s;
+  transition: color .3s ease-out;
+}
+
+.p-header.headerColorScroll {
+  background-color: rgba(0, 0, 0, 1);
+  transition: color .3s ease-out;
 }
 
 .p-header__inner {

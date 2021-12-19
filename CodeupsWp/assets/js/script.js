@@ -25,6 +25,16 @@ jQuery(function() {
 		}
 	});
 
+	// ヘッダーはMVでは透過MV以下追従。透過しない。
+  $(window).on("scroll", function () {
+    var mainHeight = $(".p-mv").height();
+    if (mainHeight - 30 < $(this).scrollTop()) {
+      $(".js-header").addClass("headerColorScroll");
+    } else {
+      $(".js-header").removeClass("headerColorScroll");
+		}
+	});
+
 	// MVスライダー
 	var mv__slider = new Swiper('.p-mv__slider', {
 		effect: 'fade',
@@ -54,6 +64,45 @@ jQuery(function() {
 			prevEl: '.swiper-button-prev',
 		},
 	});
+
+	//メイン
+  var slider = new Swiper ('.p-works-detail__slider', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    loopedSlides: 3, //スライドの枚数と同じ値を指定
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        loopedSlides: 8
+      }
+    },
+  });
+
+  //サムネイル
+  var thumbs = new Swiper ('.p-works-detail__thumbs', {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    centeredSlides: true,
+    loop: true,
+    slideToClickedSlide: true,
+    loopedSlides: 3,
+    breakpoints: {
+      768: {
+        loopedSlides: 8,
+        centeredSlides: false,
+        spaceBetween: 8, 
+      }
+    },
+  });
+
+  //4系～
+  //メインとサムネイルを紐づける
+  slider.controller.control = thumbs;
+  thumbs.controller.control = slider;
 
 	/* ドロワー */
 	jQuery(".js-drawer").on("click", function(e) {

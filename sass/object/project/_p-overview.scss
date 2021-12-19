@@ -46,18 +46,10 @@
 }
 
 .p-overview__title span {
-  content:"";
-  position: absolute;
-  top: rem(-48);
-  left: 50%;
-  transform: translateX(-59%);
-  width: rem(205);
-  height: rem(72);
-  letter-spacing: rem(2);
-
   @include mq('tab') {
-    left: 16.6%;
+    left: 7%;
     top: rem(-52);
+    transform: translateX(0);
   }
 }
 
@@ -74,7 +66,7 @@
 .p-overview__picture::before {
   content:"";
   display: block;
-  padding-top: 69.83%;
+  padding-top: 69.6%;
 }
 
 .p-overview__picture img {
@@ -130,47 +122,49 @@
   justify-content: center;
   text-align: center;
   margin-top: rem(26);
-  font-size: rem(20);
-
+  
   @include mq('tab') {
     margin-top: rem(48);
     justify-content: start;
     margin-left: rem(-2);
-    font-size: rem(16);
   }
 }
 
 .p-overview__button-swipe {
+  background-color: #333;
+  font-size: rem(20);
+  color: #fff;
+  border: 1px solid #fff;
+  transition: .3s;
+  font-size: rem(20);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
   @include mq('tab') {
-    overflow: hidden;
-    position: relative;
+    font-size: rem(16);
   }
 }
 
-.p-overview__button-swipe:before {
-  @include mq('tab') {
-    content:"";
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background: #fff;
-    transition: all .3s ease 0s;
-    display: inline-block;
-  }
+.p-overview__button-swipe::before {
+  content:"";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
 }
 
 .p-overview__button-swipe:hover {
-  @include mq('tab') {
-    color: #333;
-    border: 1px solid #fff;
-  }
+  color: #333;
 }
 
 .p-overview__button-swipe:hover:before {
-  @include mq('tab') {
-    left: 0;
-  }
+  transform-origin: left top;
+  transform: scale(1, 1);
 }

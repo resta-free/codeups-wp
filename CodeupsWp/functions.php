@@ -43,23 +43,21 @@ function my_script_init()
 add_action('wp_enqueue_scripts', 'my_script_init');
 
 
-
-
 /**
  * メニューの登録
  *
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
  */
-// function my_menu_init() {
-// 	register_nav_menus(
-// 		array(
-// 			'global'  => 'ヘッダーメニュー',
-// 			'utility' => 'ユーティリティメニュー',
-// 			'drawer'  => 'ドロワーメニュー',
-// 		)
-// 	);
-// }
-// add_action( 'init', 'my_menu_init' );
+function my_menu_init() {
+	register_nav_menus(
+		array(
+			'global'  => 'ヘッダーメニュー',
+			'drawer'  => 'ドロワーメニュー',
+			'footer' => 'フッターメニュー',
+		)
+	);
+}
+add_action( 'init', 'my_menu_init' );
 /**
  * メニューの登録
  *
@@ -149,3 +147,92 @@ function my_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
+
+
+// wp_nav_menuのliにclass追加
+function add_additional_class_on_li($classes, $item, $args)
+{
+  if (isset($args->add_li_class)) {
+    $classes['class'] = $args->add_li_class;
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+// パンくずリスト
+function my_bcn_breadcrumb_news_title( $title, $this_type, $this_id ) {
+	if ( is_category( 'news') ) {
+		$title = 'お知らせ一覧';
+	}
+	return $title;
+};
+add_filter( 'bcn_breadcrumb_title', 'my_bcn_breadcrumb_news_title', 10, 3 );
+
+function my_bcn_breadcrumb_blog_title( $title, $this_type, $this_id ) {
+	if ( is_post_type_archive( 'blog' ) ) {
+		$title = 'ブログ記事一覧';
+	}
+	return $title;
+};
+add_filter( 'bcn_breadcrumb_title', 'my_bcn_breadcrumb_blog_title', 10, 3 );
+
+//ページナビクラス名変更
+function custom_wp_pagenavi() {
+  $args = array(
+    'wrapper_class' => 'l-pagenavi c-pagenavi'
+  );
+  wp_pagenavi( $args );
+};
+
+/**
+ * previous_post_linkとnext_post_linkに任意のclassを付与する
+ */
+function add_prev_post_link_class($output) {
+  return str_replace('<a href=', '<a class="c-pagenation__prev" href=', $output);
+}
+add_filter( 'previous_post_link', 'add_prev_post_link_class' );
+
+function add_next_post_link_class($output) {
+  return str_replace('<a href=', '<a class="c-pagenation__next" href=', $output);
+}
+add_filter( 'next_post_link', 'add_next_post_link_class' );
+
+
+// カテゴリーを1つだけ表示
+function my_the_post_category( $anchor = true, $id = 0 ) {
+global $post;
+//引数が渡されなければ投稿IDを見るように設定
+if ( 0 === $id ) {
+$id = $post->ID;
+}
+
+//カテゴリー一覧を取得
+$this_categories = get_the_category( $id );
+if ( $this_categories[0] ) {
+if ( $anchor ) { //引数がtrueならリンク付きで出力
+echo '<a href="' . esc_url( get_category_link( $this_categories[0]->term_id ) ) . '">' . esc_html( $this_categories[0]->cat_name ) . '</a>';
+} else { //引数がfalseならカテゴリー名のみ出力
+echo esc_html( $this_categories[0]->cat_name );
+}
+}
+}
+
+// genreタクソノミーのメインループ表示件数変更
+function genre_roop_query( $query ) {
+
+	if ( is_tax( 'genre' ) ) {
+		$query->set( 'posts_per_page', 6 );
+	}
+	return $query;
+}
+add_filter( 'pre_get_posts', 'genre_roop_query' );
+
+// languageタクソノミーのメインループ表示件数変更
+function language_roop_query( $query ) {
+
+	if ( is_tax( 'language' ) ) {
+		$query->set( 'posts_per_page', 9 );
+	}
+	return $query;
+}
+add_filter( 'pre_get_posts', 'language_roop_query' );

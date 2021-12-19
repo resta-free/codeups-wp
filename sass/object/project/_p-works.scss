@@ -1,26 +1,6 @@
 .p-works {
-  position: relative;
 }
 
-.p-works::after {
-  content:"";
-  position: absolute;
-  width: rem(1);
-  height: calc( 776 / 375 * 150vw);
-  left: 40.5%;
-  top: rem(400);
-  background: #F9F871;
-  transform: rotate(15deg);
-  z-index: -1;
-  display: inline-block;
-
-  @include mq('tab') {
-    height: calc( 1714 / 1280 * 150vw);
-    transform: rotate(45deg);
-    left: 28.8%;
-    top: rem(170);
-  }
-}
 
 .p-works__inner {
 }
@@ -32,7 +12,7 @@
     background: linear-gradient( 90deg, transparent 0%, transparent 30%, #333 30%, #333 100%);
     width: 100%;
     padding: rem(80) 7.03% rem(82);
-    margin: rem(48) auto 0;
+    margin: rem(34) auto 0;
   }
 }
 
@@ -58,6 +38,7 @@
 
 .p-works__title {
   width: 100%;
+  position: relative;
 
   @include mq('tab') {
     max-width: rem(1280);
@@ -66,19 +47,14 @@
 }
 
 .p-works__title span {
-  position: absolute;
-  top: rem(-50);
-  left: 50%;
-  transform: translateX(-50%);
-
   @include mq('tab') {
-    left: 74%;
-    top: rem(8);
+    left: 66%;
+    top: rem(-52);
+    transform: translateX(0);
   }
 }
 
 .p-works__picture {
-
   @include mq('tab') {
     position: relative;
     width: 100%;
@@ -109,6 +85,7 @@
     padding: 0;
     width: 46.36%;
     margin-left: 2.5%;
+    margin-top: rem(-3);
   }
 }
 
@@ -148,25 +125,30 @@
   text-align: center;
   flex: 100%;
   display: flex;
-  font-size: rem(20);
 
   @include mq('tab') {
     margin-top: rem(48);
     justify-content: start;
     margin-left: rem(5);
-    font-size: rem(16);
   }
 }
 
 .p-works__button-swipe {
+  background-color: #333;
+  font-size: rem(20);
+  color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+  position: relative;
+  transition: .3s;
+  z-index: 1;
+  
   @include mq('tab') {
-    overflow: hidden;
-    position: relative;
-    opacity: 1;
+    font-size: rem(16);
   }
 }
 
-.p-works__button-swipe:before {
+.p-works__button-swipe::before {
   @include mq('tab') {
     content:"";
     z-index: -1;
@@ -174,23 +156,24 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: -100%;
+    left: 0;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform .3s;
     background-color: #fff;
-    opacity: 1;
-    transition: all .3s ease 0s;
-    display: inline-block;
+    display: block;
   }
 }
 
 .p-works__button-swipe:hover {
   @include mq('tab') {
     color: #333;
-    border: 1px solid #fff;
   }
 }
 
-.p-works__button-swipe:hover:before {
+.p-works__button-swipe:hover::before {
   @include mq('tab') {
-    left: 0;
+    transform-origin: left top;
+    transform: scale(1, 1);
   }
 }
