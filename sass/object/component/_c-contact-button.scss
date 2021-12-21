@@ -9,7 +9,9 @@
   color: #333;
   background-color: #fff;
   width: 100%;
-  padding: rem(11) 0 rem(10);
+  padding: rem(10) 0 rem(9);
+  border: 1px solid #fff;
+  cursor: pointer;
 
   @include mq('tab') {
     width: rem(360);

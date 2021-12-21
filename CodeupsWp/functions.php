@@ -159,23 +159,6 @@ function add_additional_class_on_li($classes, $item, $args)
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
-// パンくずリスト
-function my_bcn_breadcrumb_news_title( $title, $this_type, $this_id ) {
-	if ( is_category( 'news') ) {
-		$title = 'お知らせ一覧';
-	}
-	return $title;
-};
-add_filter( 'bcn_breadcrumb_title', 'my_bcn_breadcrumb_news_title', 10, 3 );
-
-function my_bcn_breadcrumb_blog_title( $title, $this_type, $this_id ) {
-	if ( is_post_type_archive( 'blog' ) ) {
-		$title = 'ブログ記事一覧';
-	}
-	return $title;
-};
-add_filter( 'bcn_breadcrumb_title', 'my_bcn_breadcrumb_blog_title', 10, 3 );
-
 //ページナビクラス名変更
 function custom_wp_pagenavi() {
   $args = array(
@@ -236,3 +219,9 @@ function language_roop_query( $query ) {
 	return $query;
 }
 add_filter( 'pre_get_posts', 'language_roop_query' );
+
+// ContactForm7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+} 

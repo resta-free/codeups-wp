@@ -46,7 +46,6 @@
         echo $content_string;
         ?>
       </div>
-      <!-- c-pagenation -->
       <div class="c-pagenation l-pagenation">
         <?php $nextpost = get_adjacent_post(false, '', false); if ($nextpost) : ?>
         <div class="c-pagenation__next">

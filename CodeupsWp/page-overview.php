@@ -91,6 +91,8 @@
     </div>
   </section>
 
+  <?php get_template_part( 'template-section/sub-contact'); ?>
+
   <?php get_template_part( 'template-section/footer/content'); ?>
 
   <?php get_footer(); ?>

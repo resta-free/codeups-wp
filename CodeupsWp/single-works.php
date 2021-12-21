@@ -111,7 +111,21 @@
         </div>
         <?php endif; ?>
       </dl>
-      <?php get_template_part( 'template-section/pagenation'); ?>
+      <div class="c-pagenation l-pagenation">
+        <?php $nextpost = get_adjacent_post(false, '', false); if ($nextpost) : ?>
+        <div class="c-pagenation__next">
+          <a href="<?php echo get_permalink($nextpost->ID); ?>">next
+          </a>
+        </div>
+        <?php endif; ?>
+        <a class="c-pagenation__list" href="<?php echo esc_url( get_term_link( get_the_terms( get_the_ID(), 'genre' )[0], 'genre' ) ); ?>">一覧</a>
+        <?php $prevpost = get_adjacent_post(false, '', true); if ($prevpost) : ?>
+        <div class="c-pagenation__prev">
+          <a href="<?php echo get_permalink($prevpost->ID); ?>">prev
+          </a>
+        </div>
+        <?php endif; ?>
+      </div>
       <div class="p-works-detail__relatedArticle">
         <span class="p-works-detail__relatedArticle--sp">おすすめ記事</span>
         <span class="p-works-detail__relatedArticle--pc">関連記事</span>

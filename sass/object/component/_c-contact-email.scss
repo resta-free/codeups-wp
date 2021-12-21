@@ -1,8 +1,8 @@
-.c-contact-text {
+.c-contact-email {
 
 }
 
-.c-contact-text__text {
+.c-contact-email__text {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
@@ -22,14 +22,18 @@
   }
 }
 
-.c-contact-text__text::placeholder {
+.c-contact-email__text::placeholder {
   font-size: rem(14);
   letter-spacing: rem(0.7);
   line-height: rem(25.9);
 }
 
-.c-contact-text__text:focus {
+.c-contact-email__text:focus {
 	border: 2px solid #FFEA2E;
 	box-shadow: none;
 	outline: none;
+}
+
+.c-contact-email__text:required {
+  background-color: #FFDCDC;
 }

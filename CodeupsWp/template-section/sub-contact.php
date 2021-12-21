@@ -14,6 +14,6 @@
         </span>
       </p>
       <div class="p-sub-contact__button">
-        <a class="c-btn p-sub-contact__button-swipe" href="#">お問い合わせへ</a>
+        <a class="c-btn p-sub-contact__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/contact">お問い合わせへ</a>
       </div>
   </section>

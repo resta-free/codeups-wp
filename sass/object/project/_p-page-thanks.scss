@@ -1,0 +1,81 @@
+.p-page-thanks {
+  text-align: center;
+  padding-bottom: rem(120);
+}
+
+.p-page-thanks__inner {
+
+}
+
+.p-page-thanks__title {
+  font-size: rem(20);
+  letter-spacing: rem(2);
+  line-height: rem(28.96);
+  margin-top: rem(130);
+
+  @include mq('tab') {
+    font-size: rem(30);
+    line-height: rem(35);
+    margin-top: rem(200);
+  }
+}
+
+.p-page-thanks__text {
+  font-size: rem(20);
+  line-height: rem(28.96);
+  letter-spacing: rem(2);
+  margin-top: rem(80);
+
+  @include mq('tab') {
+    font-size: rem(30);
+    line-height: rem(35);
+  }
+}
+
+.p-page-thanks__text span {
+  display: block;
+
+  @include mq('tab') {
+    display: inline-block;
+  }
+}
+
+.p-page-thanks__button {
+  margin-top: rem(78);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.p-page-thanks__button-swipe {
+  background-color: #333;
+  font-size: rem(20);
+  overflow: hidden;
+  position: relative;
+  transition: ease .3s;
+  z-index: 1;
+}
+
+.p-page-thanks__button-swipe::before {
+  content:"";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: block;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
+}
+
+.p-page-thanks__button-swipe:hover {
+  color: #333;
+}
+
+.p-page-thanks__button-swipe:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
