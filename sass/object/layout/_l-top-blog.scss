@@ -1,7 +1,9 @@
 .l-top-blog {
   margin-top: rem(98);
+  padding-bottom: rem(120);
 
   @include mq('tab') {
     margin-top: rem(207);
+    padding-bottom: rem(150);
   }
 }

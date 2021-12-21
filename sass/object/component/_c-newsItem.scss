@@ -28,7 +28,7 @@
   border: 1px solid #fff;
   font-size: rem(14);
   padding: rem(5) rem(21) rem(4) rem(20);
-  
+
   @include mq('tab') {
     margin-top: rem(-4);
     margin-left: rem(48);

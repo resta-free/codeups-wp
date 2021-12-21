@@ -176,7 +176,8 @@ a {
 
 img {
 	border: none;
-	height: auto;
+	display: block;
+	height: 100%;
 	max-width: 100%;
 	vertical-align: top;
 }
@@ -413,6 +414,7 @@ summary {
 
 .l-top-blog {
 	margin-top: 6.125rem;
+	padding-bottom: 7.5rem;
 }
 
 .l-top-content {
@@ -962,10 +964,6 @@ summary {
 
 .top-blog {
 	margin-top: 6.3125rem;
-}
-
-.l-top-contact {
-	margin-top: 7.5rem;
 }
 
 .c-totop {
@@ -2732,6 +2730,7 @@ summary {
 
 .p-works__content {
 	background-color: #333;
+	margin-top: -2.9375rem;
 	padding: 1.5rem 1.25rem 1.3125rem;
 }
 
@@ -2739,7 +2738,6 @@ summary {
 	font-size: 1.25rem;
 	letter-spacing: 0.125rem;
 	margin-left: 1.1875rem;
-	margin-top: 0.3125rem;
 	text-align: center;
 }
 
@@ -2795,7 +2793,7 @@ summary {
 .swiper-pagination-fraction {
 	height: 3.125rem;
 	margin-left: -0.125rem;
-	margin-top: -3.4375rem;
+	margin-top: -0.25rem;
 	position: static;
 }
 
@@ -2905,9 +2903,9 @@ html {
 }
 
 .l-diagonal-line__upward::after {
-	height: calc( 1712 / 1280 * 100vw);
-	left: 48%;
-	top: -16.25rem;
+	height: calc( 2000 / 1280 * 100vw);
+	left: 45%;
+	top: -22.9375rem;
 	transform: rotate(45deg);
 }
 
@@ -2923,6 +2921,7 @@ html {
 
 .l-top-blog {
 	margin-top: 12.9375rem;
+	padding-bottom: 9.375rem;
 }
 
 .l-top-content {
@@ -3108,10 +3107,6 @@ html {
 
 .top-blog {
 	margin-top: 12.9375rem;
-}
-
-.l-top-contact {
-	margin-top: 9.375rem;
 }
 
 .c-totop {

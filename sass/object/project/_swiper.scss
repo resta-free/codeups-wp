@@ -33,7 +33,7 @@
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
   position: static;
   height: rem(50);
-  margin-top: rem(-55);
+  margin-top: rem(-4);
   margin-left: rem(-2);
 
   @include mq('tab') {

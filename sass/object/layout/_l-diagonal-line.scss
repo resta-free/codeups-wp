@@ -38,9 +38,9 @@
   z-index: -1;
 
   @include mq('tab') {
-    top: rem(-260);
-    left: 48%;
-    height: calc( 1712 / 1280 * 100vw);
+    top: rem(-367);
+    left: 45%;
+    height: calc( 2000 / 1280 * 100vw);
     transform: rotate(45deg);
   }
 }
