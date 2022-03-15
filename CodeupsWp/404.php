@@ -14,7 +14,7 @@
     <p class="l-404__title">404 Not Found</p>
     <p class="l-404__text">お探しのページは<span>見つかりませんでした。</span></p>
     <div class="l-404__button">
-      <a href="index.html">TOPへ</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOPへ</a>
     </div>
   </div>
 

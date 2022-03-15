@@ -14,13 +14,13 @@
   <section class="p-sub-overview">
     <div class="p-sub-overview__inner">
       <div class="p-sub-overview__visual c-page-visual">
-        <h3 class="p-sub-overview__title c-page-visual__title">企業概要</h3>
+        <h3 class="p-sub-overview__title c-page-visual__title">店舗詳細</h3>
       </div>
       <?php get_template_part( 'template-section/breadcrumbs'); ?>
       <dl class="p-sub-overview__list">
         <?php if ( get_field( 'company' ) ) : ?>
         <div class="p-sub-overview__row">
-          <dt class="p-sub-overview__term">会社名</dt>
+          <dt class="p-sub-overview__term">店舗名</dt>
           <dd class="p-sub-overview__data">
             <?php the_field( 'company' ); ?>
           </dd>
@@ -28,25 +28,9 @@
         <?php endif; ?>
         <?php if ( get_field( 'establishment' ) ) : ?>
         <div class="p-sub-overview__row">
-          <dt class="p-sub-overview__term">設立</dt>
+          <dt class="p-sub-overview__term">開店</dt>
           <dd class="p-sub-overview__data">
             <?php the_field( 'establishment' ); ?>
-          </dd>
-        </div>
-        <?php endif; ?>
-        <?php if ( get_field( 'capital' ) ) : ?>
-        <div class="p-sub-overview__row">
-          <dt class="p-sub-overview__term">資本金</dt>
-          <dd class="p-sub-overview__data">
-            <?php the_field( 'capital' ); ?>
-          </dd>
-        </div>
-        <?php endif; ?>
-        <?php if ( get_field( 'sales' ) ) : ?>
-        <div class="p-sub-overview__row">
-          <dt class="p-sub-overview__term">売上高</dt>
-          <dd class="p-sub-overview__data">
-            <?php the_field( 'sales' ); ?>
           </dd>
         </div>
         <?php endif; ?>
@@ -60,17 +44,9 @@
         <?php endif; ?>
         <?php if ( get_field( 'employees' ) ) : ?>
         <div class="p-sub-overview__row">
-          <dt class="p-sub-overview__term">従業員数</dt>
+          <dt class="p-sub-overview__term">スタッフ</dt>
           <dd class="p-sub-overview__data">
             <?php the_field( 'employees' ); ?>
-          </dd>
-        </div>
-        <?php endif; ?>
-        <?php if ( get_field( 'content' ) ) : ?>
-        <div class="p-sub-overview__row">
-          <dt class="p-sub-overview__term">事業内容</dt>
-          <dd class="p-sub-overview__data">
-            <?php the_field( 'content' ); ?>
           </dd>
         </div>
         <?php endif; ?>

@@ -25,7 +25,7 @@
             <div class="slide-img p-mv__bg3"></div>
           </div><!-- /swiper-slide -->
           <div class="p-mv__title-box">
-            <h1 class="p-mv__main-title"><?php bloginfo('name'); ?></h1>
+            <h1 class="p-mv__main-title">更に向こうへ</h1>
             <p class="p-mv__sub-title"><?php bloginfo('description'); ?></p>
           </div>
         </div>
@@ -48,8 +48,13 @@ $news_query = new WP_Query(
   <div class="p-news-content">
     <div class="p-news-content__item c-newsItem">
       <time class="c-newsItem__time" datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
-      <div class="c-newsItem__category"><a href="<?php the_permalink(); ?>">お知らせ</a></div>
-      <p class="c-newsItem__text c-newsItem__text--underline"><?php the_title(); ?></p>
+      <?php
+      $category = get_the_category();
+      if ($category[0] ) {
+      echo '<div class="c-newsItem__category">' . $category[0]->cat_name . '</div>';
+      }
+      ?>
+      <p class="c-newsItem__text c-newsItem__text--underline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
       <div class="p-news-content__button">
         <?php
         $category = get_the_category();
@@ -66,32 +71,33 @@ $news_query = new WP_Query(
   <!-- l-diagonal-line -->
   <div class="l-diagonal-line">
     <div class="l-diagonal-line__downward">
+
       <!-- content -->
       <section id="content" class="p-content l-top-content">
         <div class="p-content__inner">
           <div class="p-content__title c-section-header">
-            <h2 class="c-section-header__title">企業概要</h2>
-            <span class="c-section-header__subtitle">Content</span>
+            <h2 class="c-section-header__title">プログラム</h2>
+            <span class="c-section-header__subtitle">Program</span>
           </div>
           <div class="p-content__items">
             <div class="p-content__itembox">
               <div class="p-content__item1">
-                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content">経営理念ページへ</a>
+                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content">プログラムページへ</a>
               </div>
             </div>
             <div class="p-content__itembox">
               <div class="p-content__item2">
-                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content1">理念1へ</a>
+                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content1">ジム</a>
               </div>
             </div>
             <div class="p-content__itembox">
               <div class="p-content__item3">
-                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content2">理念2へ</a>
+                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content2">ボクシング</a>
               </div>
             </div>
             <div class="p-content__itembox">
               <div class="p-content__item4">
-                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content3">理念3へ</a>
+                <a class="p-content__link" href="<?php echo esc_url( home_url( '/' ) ); ?>/content#content3">フィットネス</a>
               </div>
             </div>
           </div>
@@ -102,15 +108,15 @@ $news_query = new WP_Query(
       <section id="works" class="p-works l-top-works">
         <div class="works__inner">
           <div class="p-works__title c-section-header">
-            <h2 class="c-section-header__title">制作実績</h2>
-            <span class="c-section-header__subtitle">Works</span>
+            <h2 class="c-section-header__title">おすすめグッズ</h2>
+            <span class="c-section-header__subtitle">Goods</span>
           </div>
           <div class="p-works__contents">
             <div class="p-works__body">
               <div class="swiper p-works__slider">
                 <?php
                 $args = array(
-                  'post_type' => 'works',
+                  'post_type' => 'goods',
                   'orderby' => 'DESC',
                   'posts_per_page' => 3
                 );
@@ -125,7 +131,7 @@ $news_query = new WP_Query(
                       if (has_post_thumbnail() ) {
                       the_post_thumbnail('large');
                       } else {
-                      echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/common/noimg.png" alt="">';
+                      echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri()) . '/assets/img/common/noimg.png" alt="">';
                       }
                       ?>
                     </figure>
@@ -138,13 +144,13 @@ $news_query = new WP_Query(
               </div>
               <div class="swiper-pagination"></div>
               <div class="p-works__content">
-                <p class="p-works__main-title">メインタイトルが入ります。
+                <p class="p-works__main-title">おすすめのギア/サプリを紹介
                 </p>
                 <p class="p-works__text">
-                  テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                  トレーニング効率を上げるなら、適切なギアやサプリは必須です。私たちがおすすめするものを紹介しますのでぜ活用してください。
                 </p>
                 <div class="p-works__button-more">
-                  <a class="c-btn p-works__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/works/">詳しく見る</a>
+                  <a class="c-btn p-works__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/goods/">おすすめグッズを詳しく見る</a>
                 </div>
               </div>
             </div>
@@ -158,21 +164,21 @@ $news_query = new WP_Query(
       <section id="overview" class="p-overview l-top-overview">
         <div class="p-overview__inner">
           <div class="p-overview__title c-section-header">
-            <h2 class="c-section-header__title">企業概要</h2>
-            <span class="c-section-header__subtitle">Overview</span>
+            <h2 class="c-section-header__title">店舗詳細</h2>
+            <span class="c-section-header__subtitle">Access</span>
           </div>
           <div class="p-overview__contents">
             <div class="p-overview__body">
               <div class="p-overview__picture">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/common/overview.jpg" alt="overview1">
+                <img loading="lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/common/access_img.jpg" alt="店舗内の画像">
               </div>
               <div class="p-overview__content">
-                <p class="p-overview__main-title">メインタイトルが入ります。</p>
+                <p class="p-overview__main-title">全国に展開しています</p>
                 <p class="p-overview__text">
-                  テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                  事業拡大に伴い、実店舗を増やしています。お近くの店舗へぜひ一度お立ち寄りください。また、ご自宅でトレーニングを行いたい方向けにオンラインプログラムの用意もございます。
                 </p>
                 <div class="p-overview__button-more">
-                  <a class="c-btn p-overview__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/overview">詳しく見る</a>
+                  <a class="c-btn p-overview__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/overview">店舗詳細を詳しく見る</a>
                 </div>
               </div>
             </div>
@@ -204,7 +210,7 @@ $news_query = new WP_Query(
               if (has_post_thumbnail() ) {
                       the_post_thumbnail('large');
                       } else {
-                      echo '<img src="' . esc_url(get_template_directory_uri()) . 'assets//img/common/noimg.png" alt="">';
+                      echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri()) . 'assets//img/common/noimg.png" alt="">';
                       }
                       ?>
               </div>
@@ -222,7 +228,7 @@ $news_query = new WP_Query(
           </div>
           <?php endif; ?>
           <div class="p-blog__button">
-            <a class="c-btn p-blog__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/blog">詳しく見る</a>
+            <a class="c-btn p-blog__button-swipe" href="<?php echo esc_url( home_url( '/' ) ); ?>/blog">ブログを詳しく見る</a>
           </div>
         </div>
       </section>

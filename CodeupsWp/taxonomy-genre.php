@@ -19,7 +19,7 @@
   <section class="p-sub-works">
     <div class="p-sub-works__inner">
       <div class="p-sub-works__visual c-page-visual">
-        <h3 class="p-sub-works__title c-page-visual__title">制作実績</h3>
+        <h3 class="p-sub-works__title c-page-visual__title">おすすめグッズ</h3>
       </div>
 
       <?php get_template_part( 'template-section/breadcrumbs'); ?>
@@ -27,7 +27,7 @@
     </div>
 
     <ul class="p-sub-works__list">
-      <li class="p-sub-works__category"><a href="<?php echo esc_url( get_post_type_archive_link( 'works' ) ); ?>">ALL</a></li>
+      <li class="p-sub-works__category"><a href="<?php echo esc_url( get_post_type_archive_link( 'goods' ) ); ?>">ALL</a></li>
       <?php 
         $cat = get_queried_object();
         $cat_name = $cat->name;
@@ -52,7 +52,7 @@
           if ( has_post_thumbnail() ) {
             the_post_thumbnail( 'my_thumbnail' );
           } else {
-            echo '<img src="' . esc_url( get_template_directory_uri() ) . '/assets/img/common/noimg.png" alt="">';
+            echo '<img loading="lazy" src="' . esc_url( get_template_directory_uri() ) . '/assets/img/common/noimg.png" alt="">';
           }
         ?>
           <span><?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?></span>

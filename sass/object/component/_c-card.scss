@@ -19,7 +19,23 @@
 }
 
 .c-card__img {
+  position: relative;
+  width: 100%;
+}
 
+.c-card__img::before {
+  content:"";
+  display: block;
+  padding-top: 66.5714%;/* 高さ / 幅 * 100 を指定 */
+}
+
+.c-card__img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .c-card__body {

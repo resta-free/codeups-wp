@@ -2,26 +2,27 @@
 }
 
 .p-mv__slider {
-  // height: 100vh;
-  height: rem(770);
+  height: 100vh;
+  // height: rem(770);
   position: relative;
   text-align: center;
 
   @include mq('tab') {
-    height: rem(851);
+    // height: rem(851);
   }
 }
 
 .p-mv__inner {
+
 }
 
 .p-mv__bg {
-  // height: 100vh;
-  height: rem(770);
+  height: 100vh;
+  // height: rem(770);
   width: 100vw;
   
   @include mq('tab') {
-    height: rem(851);
+    // height: rem(851);
   }
 }
 
@@ -34,27 +35,15 @@
 }
 
 .p-mv__bg1 {
-  background: transparent url(../img/common/mv-sp1.jpg) no-repeat center center / cover;
-
-  @include mq('tab') {
-    background: transparent url(../img/common/mv-pc1.jpg) no-repeat center center / cover;
-  }
+  background: transparent url(../img/common/mv-img1.png) no-repeat center center / cover;
 }
 
 .p-mv__bg2 {
-  background: transparent url(../img/common/mv-sp2.jpg) no-repeat center center / cover;
-
-  @include mq('tab') {
-    background: transparent url(../img/common/mv-pc2.jpg) no-repeat center center / cover;
-  }
+  background: transparent url(../img/common/mv-img2.jpg) no-repeat center center / cover;
 }
 
 .p-mv__bg3 {
-  background: transparent url(../img/common/mv-sp3.jpg) no-repeat center center / cover;
-
-  @include mq('tab') {
-    background: transparent url(../img/common/mv-pc3.jpg) no-repeat center center / cover;
-  }
+  background: transparent url(../img/common/mv-img3.jpg) no-repeat center center / cover;
 }
 
 .p-mv__title-box {
@@ -75,10 +64,13 @@
 }
 
 .p-mv__main-title {
-  font-size: rem(28);
+  // font-size: rem(28);
+  font-size: rem(50);
+  font-family: $font-family-sub;
 
   @include mq('tab') {
-    font-size: rem(50);
+    font-size: rem(100);
+    // font-size: rem(50);
   }
 }
 

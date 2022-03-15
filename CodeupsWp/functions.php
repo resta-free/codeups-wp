@@ -225,3 +225,13 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 } 
+
+// 3日以内の記事にNEW表示
+function keika_time($days){
+	$today = date_i18n('U');
+	$entry_day = get_the_time('U');
+	$keika = date('U',($today - $entry_day)) / 86400;
+	if ( $days > $keika ):
+			echo '<div class="p-card-blog__icon-new">new</div>';
+	endif;
+}

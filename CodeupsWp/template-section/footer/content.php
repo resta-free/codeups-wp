@@ -4,9 +4,7 @@
   <footer class="p-footer l-footer">
     <div class="p-footer__inner">
       <div class="p-footer__logo">
-        <a href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/common/codeups.svg" alt="codeups">
-        </a>
+        <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
       </div>
       <nav class="p-footer__nav">
         <?php
@@ -35,5 +33,5 @@
         ?>
       </nav>
     </div>
-    <p class="p-footer__copy">&copy; 2021 CodeUps Inc.</p>
+    <p class="p-footer__copy">&copy; 2021 PlusUltra Inc.</p>
   </footer>

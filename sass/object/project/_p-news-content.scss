@@ -10,6 +10,7 @@
   flex: 100%;
   display: flex;
   justify-content: center;
+  margin-left: rem(30);
 
   @include mq('tab') {
     margin-left: rem(49);

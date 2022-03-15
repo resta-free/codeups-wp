@@ -31,7 +31,7 @@
           the_post_thumbnail('full');
           } else {
           // なければnoimage画像をデフォルトで表示
-          echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/common/noimg.png" alt="">';
+          echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri()) . '/assets/img/common/noimg.png" alt="">';
           }
           ?>
         </div>
@@ -89,7 +89,7 @@
       the_post_thumbnail('large');
       } else {
       // なければnoimage画像をデフォルトで表示
-      echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/noimg.png" alt="">';
+      echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri()) . '/img/noimg.png" alt="">';
       }
       ?>
           </div>

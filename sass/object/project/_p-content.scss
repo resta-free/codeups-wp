@@ -33,7 +33,7 @@
 
   @include mq('tab') {
     flex-wrap: nowrap;
-    margin-top: rem(42);
+    margin-top: rem(75);
   }
 }
 
@@ -64,19 +64,19 @@
 }
 
 .p-content__item1 {
-  background: transparent url(../img/common/content1.png) no-repeat center center / cover;
+  background: transparent url(../img/common/content_img1.jpg) no-repeat center center / cover;
 }
 
 .p-content__item2 {
-  background: transparent url(../img/common/content2.png) no-repeat center center / cover;
+  background: transparent url(../img/common/content_img2.jpg) no-repeat center center / cover;
 }
 
 .p-content__item3 {
-  background: transparent url(../img/common/content3.png) no-repeat center center / cover;
+  background: transparent url(../img/common/content_img3.jpg) no-repeat center center / cover;
 }
 
 .p-content__item4 {
-  background: transparent url(../img/common/content4.png) no-repeat center center / cover;
+  background: transparent url(../img/common/content_img4.jpg) no-repeat center center / cover;
 }
 
 .p-content__link {

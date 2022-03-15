@@ -33,7 +33,7 @@
           if (has_post_thumbnail() ) {
           the_post_thumbnail('large');
           } else {
-          echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/common/noimg.png" alt="">';
+          echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri()) . '/assets/img/common/noimg.png" alt="">';
           }
           ?>
         </div>

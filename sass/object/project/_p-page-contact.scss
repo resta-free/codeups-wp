@@ -3,7 +3,7 @@
 .p-page-contact__inner {}
 
 .p-page-contact__visual {
-  background-image: url(../img/contact/page-contact_img-sp.jpg);
+  background-image: url(../img/contact/page-contact_img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,7 +11,6 @@
 
   @include mq('tab') {
     height: rem(370);
-    background-image: url(../img/contact/page-contact_img-pc.jpg);
   }
 }
 
@@ -96,8 +95,6 @@
 .wpcf7 form .wpcf7-response-output {
   border: 0px none;
 }
-
-
 
 .wpcf7 form .wpcf7-response-output {
   margin: rem(30) auto rem(-60);

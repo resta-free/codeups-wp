@@ -7,7 +7,7 @@
 }
 
 .p-sub-content__visual {
-  background-image: url(../img/content/sub-content_img-sp.jpg);
+  background-image: url(../img/common/mv-img3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -15,7 +15,6 @@
   
   @include mq('tab') {
     height: rem(370);
-    background-image: url(../img/content/sub-content_img-pc.jpg);
   }
 }
 
@@ -126,29 +125,28 @@
 }
 
 .p-sub-content__img {
+  position: relative;
+  width: 100%;
+
   @include mq('tab') {
-    position: relative;
     width: 50.5%;
     max-width: rem(550);
   }
 }
 
 .p-sub-content__img::before {
-  @include mq('tab') {
-    content:"";
-    display: block;
-    padding-top: 66.7%;
-  }
+  content:"";
+  display: block;
+  padding-top: 66.7%;
 }
 
 .p-sub-content__img img {
-  @include mq('tab') {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-  }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .p-sub-content__item:nth-of-type(even) {

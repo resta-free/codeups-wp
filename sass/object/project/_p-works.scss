@@ -12,7 +12,7 @@
     background: linear-gradient( 90deg, transparent 0%, transparent 30%, #333 30%, #333 100%);
     width: 100%;
     padding: rem(80) 7.03% rem(82);
-    margin: rem(34) auto 0;
+    margin: rem(40) auto 0;
   }
 }
 
@@ -71,8 +71,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 
